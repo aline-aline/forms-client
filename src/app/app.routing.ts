@@ -16,17 +16,15 @@ import { AnswerNewComponent } from './answers/answer-new/answer-new.component';
 import { LoginComponent } from './users/login/login.component';
 import { RegisterComponent } from './users/register/register.component';
 
-
-
 const appRoutes: Routes = [
     { path: '', pathMatch: 'full', component: HomeComponent },
     { path: 'not-found', component: NotFoundComponent },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'forms', component: FormListComponent, canActivate: [Angular2TokenService]},
-    { path: 'forms/:id', component: FormEditComponent, canActivate: [Angular2TokenService]},
     { path: 'forms/new', component: FormEditComponent, canActivate: [Angular2TokenService]},
-    { path: 'answers', component: AnswerNewComponent, canActivate: [Angular2TokenService]},
+    { path: 'forms/:id', component: FormEditComponent, canActivate: [Angular2TokenService]},
+    { path: 'answers/:id/new', component: AnswerNewComponent, canActivate: [Angular2TokenService]},
     { path: 'answers/:id', component: AnswerListComponent, canActivate: [Angular2TokenService]},
     { path: '**', component: NotFoundComponent },
 ];
